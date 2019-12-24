@@ -1,11 +1,15 @@
 # Django-GraphQL-React-Demo
 
 Introduce how to use GraphQL to connect Django and React
-## Medium:
-- [Django + GraphQL + React —1. Integrate GraphQL into your Django project](https://medium.com/@zoejoyuliao/django-graphql-react-1-integrate-graphql-into-your-django-project-ff51237bb5d9)
+
+## Audience
+The project is intended for engineers who want to know how to use GraphQL to connect Django and React. There is a basic GraphQL server in backend directory and GraphQL client in frontend directory. If you want to know the details, you can read the following Medium articles.
+
+## Medium
+- [Django + GraphQL + React — 1. Integrate GraphQL into your Django project](https://medium.com/@zoejoyuliao/django-graphql-react-1-integrate-graphql-into-your-django-project-ff51237bb5d9)
 - [Django + GraphQL + React — 2. Integrate GraphQL into your React project](https://medium.com/@zoejoyuliao/django-graphql-react-2-integrate-graphql-into-your-react-project-71fa74f1cb00)
 
-## Demo Images:
+## Demo Images
 - Django - GraphiQL - Mutation:  
   ![Django - GraphiQL - Mutation](https://miro.medium.com/max/1279/1*u-B-WQ5nfI3q3URSfcZ4xA.png)
 - Django - GraphiQL - Query:  
@@ -14,7 +18,7 @@ Introduce how to use GraphQL to connect Django and React
   ![React - Query](https://miro.medium.com/max/793/1*eDgjw6WCP_xfJTeUEEykig.png)
 
 ## Backend
-- Dirctory: backend
+- Directory: backend
 - Language: Python3
 - Framework: Django
 
@@ -34,5 +38,6 @@ Introduce how to use GraphQL to connect Django and React
 
 ### Set Up
 - `cd frontend/app`
+- `npm install`
 - `npm start`
 - Visit [http://localhost:3000](http://localhost:3000)
