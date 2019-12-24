@@ -14,8 +14,8 @@ The project is intended for engineers who want to know how to use GraphQL to con
   ![Django - GraphiQL - Mutation](https://miro.medium.com/max/1279/1*u-B-WQ5nfI3q3URSfcZ4xA.png)
 - Django - GraphiQL - Query:  
   ![Django - GraphiQL - Query](https://miro.medium.com/max/1280/1*zD_QIqmfOKymenXJg_d4fw.png)
-- React - Query:  
-  ![React - Query](https://miro.medium.com/max/793/1*eDgjw6WCP_xfJTeUEEykig.png)
+- React - Mutation & Query:  
+  ![React - Mutation & Query](https://miro.medium.com/max/600/1*zJHhqqSv4CZ_o94ZSgvxPA.gif)
 
 ## Backend
 - Directory: backend
