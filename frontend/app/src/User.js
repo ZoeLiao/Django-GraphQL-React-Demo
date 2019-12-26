@@ -13,7 +13,7 @@ query {
 }
 `;
 
-const CREAT_USER = gql`
+const CREATE_USER = gql`
 mutation createUser ($name: String!, $lastName: String!){
   createUser (name: $name, lastName: $lastName){
     id
@@ -42,7 +42,7 @@ export function UserInfo() {
 export function CreateUser() {
 
   let inputName, inputLastName;
-  const [createUser, { data }  ] = useMutation(CREAT_USER);
+  const [createUser, { data }  ] = useMutation(CREATE_USER);
 
   return (
     <div>
