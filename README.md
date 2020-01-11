@@ -5,6 +5,15 @@ Introduce how to use GraphQL to connect Django and React
 ## Audience
 The project is intended for engineers who want to know how to use GraphQL to connect Django and React. There is a basic GraphQL server in backend directory and GraphQL client in frontend directory. If you want to know the details, you can read the following Medium articles.
 
+## GraphQL
+### Query
+### Mutation
+### Subscription
+According to [the official documentations](https://www.apollographql.com/docs/react/data/subscriptions/): In most cases, intermittent polling or manual refetching are actually the best way to keep your client up to date. So when is a subscription the best option? Subscriptions are especially useful if:
+
+- 1. The initial state is large, but the incremental change sets are small. The starting state can be fetched with a query and subsequently updated through a subscription.
+- 2. You care about low-latency updates in the case of specific events, for example in the case of a chat application where users expect to receive new messages in a matter of seconds.
+
 ## Medium
 - [Django + GraphQL + React — 1. Integrate GraphQL into your Django project](https://medium.com/@zoejoyuliao/django-graphql-react-1-integrate-graphql-into-your-django-project-ff51237bb5d9)
 - [Django + GraphQL + React — 2. Integrate GraphQL into your React project](https://medium.com/@zoejoyuliao/django-graphql-react-2-integrate-graphql-into-your-react-project-71fa74f1cb00)

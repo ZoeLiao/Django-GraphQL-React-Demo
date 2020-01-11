@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'graphene_django',
-    'myapp'
+    'myapp',
+    'rest_framework',
+    'channels',
+    'channels_api',
 ]
 
 MIDDLEWARE = [
@@ -125,10 +128,21 @@ STATIC_URL = '/static/'
 
 
 GRAPHENE = {
-    'SCHEMA': 'myapp.schema.schema'
+    'SCHEMA': 'myapp.schema.schema',
+    'SCHEMA_INDENT': 4,
+    'MIDDLEWARE': [
+        'graphene_django_subscriptions.depromise_subscription',
+    ]
 }
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://127.0.0.1:3000'
 ]
+
+CHANNEL_LAYERS = {
+  'default': {
+    'BACKEND': 'asgiref.inmemory.ChannelLayer',
+    'ROUTING': 'myproject.routing.project_routing',  # Our project routing
+  },
+}

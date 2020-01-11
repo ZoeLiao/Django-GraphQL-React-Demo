@@ -1,6 +1,7 @@
 from graphene_django import DjangoObjectType
 import graphene
 from myapp.models import UserModel
+from myapp.subscriptions import UserSubscription
 
 
 class UserType(DjangoObjectType):
@@ -39,7 +40,12 @@ class Mutation(graphene.ObjectType):
     create_user = CreateUser.Field()
 
 
+class Subscription(graphene.ObjectType):
+    user_subscription = UserSubscription.Field()
+
+
 schema = graphene.Schema(
     query=Query,
-    mutation=Mutation
+    mutation=Mutation,
+    subscriptions=Subscription
 )
