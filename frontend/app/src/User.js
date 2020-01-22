@@ -26,7 +26,9 @@ mutation createUser ($name: String!, $lastName: String!){
 
 export function UserInfo() {
 
-  const { data, loading } = useQuery(QUERY_USERS);
+  // Polling: rovides near-real-time synchronization with your server
+  // by causing a query to execute periodically at a specified interval
+  const { data, loading } = useQuery(QUERY_USERS, { pollInterval: 500 });
   // should handle loading status
   if (loading) return <p>Loading...</p>;
 
