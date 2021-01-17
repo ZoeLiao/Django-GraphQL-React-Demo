@@ -10,9 +10,13 @@ class UserType(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     users = graphene.List(UserType)
+    user_by_id = graphene.Field(UserType, id=graphene.Int())
 
     def resolve_users(self, info):
         return UserModel.objects.all()
+
+    def resolve_user_by_id(self, info, id):
+        return UserModel.objects.get(id=id)
 
 
 class CreateUser(graphene.Mutation):
