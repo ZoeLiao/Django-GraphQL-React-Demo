@@ -19,7 +19,7 @@ const App = () => (
       height: '100vh',
       flexDirection: 'column'
     }}>
-      <h2>My first Apollo app 🚀</h2>
+      <h2>My first Apollo app <span role="img" aria-label="rocket">🚀</span></h2>
 
       <CreateUser/>
       <UserInfo/>

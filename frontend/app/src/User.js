@@ -32,7 +32,7 @@ export function UserInfo() {
   // should handle loading status
   if (loading) return <p>Loading...</p>;
 
-  return data.users.map(({ id, name, lastName }) => (
+  return data?.users.map(({ id, name, lastName }) => (
     <div key={ id }>
       <p>
         User - { id }: { name } { lastName }
@@ -44,7 +44,7 @@ export function UserInfo() {
 export function CreateUser() {
 
   let inputName, inputLastName;
-  const [createUser, { data }  ] = useMutation(CREATE_USER);
+  const [ createUser ] = useMutation(CREATE_USER);
 
   return (
     <div>
