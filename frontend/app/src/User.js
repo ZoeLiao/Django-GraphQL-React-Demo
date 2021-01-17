@@ -7,17 +7,17 @@ const QUERY_USERS = gql`
 query {
   users {
     id
-    name
+    firstName
     lastName
   }
 }
 `;
 
 const CREATE_USER = gql`
-mutation createUser ($name: String!, $lastName: String!){
-  createUser (name: $name, lastName: $lastName){
+mutation createUser ($firstName: String!, $lastName: String!){
+  createUser (firstName: $firstName, lastName: $lastName){
     id
-    name
+    firstName
     lastName
   }
 }
@@ -32,10 +32,10 @@ export function UserInfo() {
   // should handle loading status
   if (loading) return <p>Loading...</p>;
 
-  return data?.users.map(({ id, name, lastName }) => (
+  return data?.users.map(({ id, firstName, lastName }) => (
     <div key={ id }>
       <p>
-        User - { id }: { name } { lastName }
+        User - { id }: { firstName } { lastName }
       </p>
     </div>
   ));
@@ -43,7 +43,7 @@ export function UserInfo() {
 
 export function CreateUser() {
 
-  let inputName, inputLastName;
+  let firstName, lastName;
   const [ createUser ] = useMutation(CREATE_USER);
 
   return (
@@ -52,19 +52,19 @@ export function CreateUser() {
         onSubmit={e => {
           e.preventDefault();
           createUser({ variables: {
-              name: inputName.value,
-              lastName: inputLastName.value 
+              firstName: firstName.value,
+              lastName: lastName.value
           } });
-          inputName.value = '';
-          inputLastName.value = '';
+          firstName.value = '';
+          lastName.value = '';
           window.location.reload();
         }}
         style = {{ marginTop: '2em', marginBottom: '2em' }}
       >
-        <label>Name: </label>
+        <label>First Name: </label>
         <input
           ref={node => {
-            inputName = node;
+            firstName = node;
           }}
           style={{ marginRight: '1em' }}
         />
@@ -72,7 +72,7 @@ export function CreateUser() {
         <label>Last Name: </label>
         <input
           ref={node => {
-            inputLastName = node;
+            lastName = node;
           }}
           style={{ marginRight: '1em' }}
         />
